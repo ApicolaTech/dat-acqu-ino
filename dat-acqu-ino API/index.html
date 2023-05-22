@@ -1,0 +1,517 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Line Chart</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+    <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+    <style>
+        section {
+            width: 50%;
+        }
+        canvas {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Sensor Interno 1 LM 35 - Temperatura</h1>
+        <section >
+            <canvas id="temperaturaInterna"></canvas>
+        </section>
+        <h1>Sensor Externo 1 LM 35 - Temperatura</h1>
+        <section >
+            <canvas id="temperaturaExterna"></canvas>
+        </section>
+        <h1>Sensor Interno 2 LM 35 - Temperatura</h1>
+        <section >
+            <canvas id="temperaturaInterna1"></canvas>
+        </section>
+        <h1>Sensor Externo 2 LM 35 - Temperatura</h1>
+        <section >
+            <canvas id="temperaturaExterna1"></canvas>
+        </section>
+        <h1>Sensor Interno 3 LM 35 - Temperatura</h1>
+        <section >
+            <canvas id="temperaturaInterna2"></canvas>
+        </section>
+        <h1>Sensor Externo 3 LM 35 - Temperatura</h1>
+        <section >
+            <canvas id="temperaturaExterna2"></canvas>
+        </section>
+        <h1>Sensor Interno 4 LM 35 - Temperatura</h1>
+        <section >
+            <canvas id="temperaturaInterna3"></canvas>
+        </section>
+        <h1>Sensor Externo 4 LM 35 - Temperatura</h1>
+        <section >
+            <canvas id="temperaturaExterna3"></canvas>
+        </section>
+        <h1>Sensor Interno 5 LM 35 - Temperatura</h1>
+        <section >
+            <canvas id="temperaturaInterna4"></canvas>
+        </section>
+        <h1>Sensor Externo 5 LM 35 - Temperatura</h1>
+        <section >
+            <canvas id="temperaturaExterna4"></canvas>
+        </section>
+    </div>
+
+    <script>
+        /* -- lm35Temperatura */
+        var drawtemperaturaInterna = document.getElementById('temperaturaInterna').getContext('2d');
+        drawtemperaturaInterna.canvas.width = 1000;
+        drawtemperaturaInterna.canvas.height = 300;
+        var temperaturaInterna = new Chart(
+            drawtemperaturaInterna,
+            {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Temperatura',
+                        type: 'line',
+                        borderColor: ['#ffd902'],
+                        backgroundColor: ['#ffe135']
+                    }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            distribution: 'series',
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }],
+                        yAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Temperatura'
+                            },
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    },
+                    animation: {
+                        duration: 0
+                    }
+                }
+            }
+        );
+
+        var drawtemperaturaExterna = document.getElementById('temperaturaExterna').getContext('2d');
+        drawtemperaturaExterna.canvas.width = 1000;
+        drawtemperaturaExterna.canvas.height = 300;
+        var temperaturaExterna = new Chart(
+            drawtemperaturaExterna,
+            {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Temperatura',
+                        type: 'line',
+                        borderColor: ['#ffd902'],
+                        backgroundColor: ['#ffe135']
+                    }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            distribution: 'series',
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }],
+                        yAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Temperatura'
+                            },
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    },
+                    animation: {
+                        duration: 0
+                    }
+                }
+            }
+        );
+
+        var drawtemperaturaInterna1 = document.getElementById('temperaturaInterna1').getContext('2d');
+        drawtemperaturaInterna1.canvas.width = 1000;
+        drawtemperaturaInterna1.canvas.height = 300;
+        var temperaturaInterna1 = new Chart(
+            drawtemperaturaInterna1,
+            {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Temperatura',
+                        type: 'line',
+                        borderColor: ['#ffd902'],
+                        backgroundColor: ['#ffe135']
+                    }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            distribution: 'series',
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }],
+                        yAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Temperatura'
+                            },
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    },
+                    animation: {
+                        duration: 0
+                    }
+                }
+            }
+        );
+
+
+        var drawtemperaturaExterna1 = document.getElementById('temperaturaExterna1').getContext('2d');
+        drawtemperaturaExterna1.canvas.width = 1000;
+        drawtemperaturaExterna1.canvas.height = 300;
+        var temperaturaExterna1 = new Chart(
+            drawtemperaturaExterna1,
+            {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Temperatura',
+                        type: 'line',
+                        borderColor: ['#ffd902'],
+                        backgroundColor: ['#ffe135']
+                    }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            distribution: 'series',
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }],
+                        yAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Temperatura'
+                            },
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    },
+                    animation: {
+                        duration: 0
+                    }
+                }
+            }
+        );
+        var drawtemperaturaInterna2 = document.getElementById('temperaturaInterna2').getContext('2d');
+        drawtemperaturaInterna2.canvas.width = 1000;
+        drawtemperaturaInterna2.canvas.height = 300;
+        var temperaturaInterna2 = new Chart(
+            drawtemperaturaInterna2,
+            {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Temperatura',
+                        type: 'line',
+                        borderColor: ['#ffd902'],
+                        backgroundColor: ['#ffe135']
+                    }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            distribution: 'series',
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }],
+                        yAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Temperatura'
+                            },
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    },
+                    animation: {
+                        duration: 0
+                    }
+                }
+            }
+        );
+
+
+        var drawtemperaturaExterna2 = document.getElementById('temperaturaExterna2').getContext('2d');
+        drawtemperaturaExterna2.canvas.width = 1000;
+        drawtemperaturaExterna2.canvas.height = 300;
+        var temperaturaExterna2 = new Chart(
+            drawtemperaturaExterna2,
+            {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Temperatura',
+                        type: 'line',
+                        borderColor: ['#ffd902'],
+                        backgroundColor: ['#ffe135']
+                    }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            distribution: 'series',
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }],
+                        yAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Temperatura'
+                            },
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    },
+                    animation: {
+                        duration: 0
+                    }
+                }
+            }
+        );
+        
+        var drawdrawtemperaturaInterna3 = document.getElementById('temperaturaInterna3').getContext('2d');
+        drawdrawtemperaturaInterna3.canvas.width = 1000;
+        drawdrawtemperaturaInterna3.canvas.height = 300;
+        var temperaturaInterna3 = new Chart(
+            drawdrawtemperaturaInterna3,
+            {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Temperatura',
+                        type: 'line',
+                        borderColor: ['#ffd902'],
+                        backgroundColor: ['#ffe135']
+                    }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            distribution: 'series',
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }],
+                        yAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Temperatura'
+                            },
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    },
+                    animation: {
+                        duration: 0
+                    }
+                }
+            }
+        );
+
+
+        var drawtemperaturaExterna3 = document.getElementById('temperaturaExterna3').getContext('2d');
+        drawtemperaturaExterna3.canvas.width = 1000;
+        drawtemperaturaExterna3.canvas.height = 300;
+        var temperaturaExterna3 = new Chart(
+            drawtemperaturaExterna3,
+            {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Temperatura',
+                        type: 'line',
+                        borderColor: ['#ffd902'],
+                        backgroundColor: ['#ffe135']
+                    }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            distribution: 'series',
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }],
+                        yAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Temperatura'
+                            },
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    },
+                    animation: {
+                        duration: 0
+                    }
+                }
+            }
+        );
+        var drawtemperaturaInterna4 = document.getElementById('temperaturaInterna4').getContext('2d');
+        drawtemperaturaInterna4.canvas.width = 1000;
+        drawtemperaturaInterna4.canvas.height = 300;
+        var temperaturaInterna4 = new Chart(
+            drawtemperaturaInterna4,
+            {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Temperatura',
+                        type: 'line',
+                        borderColor: ['#ffd902'],
+                        backgroundColor: ['#ffe135']
+                    }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            distribution: 'series',
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }],
+                        yAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Temperatura'
+                            },
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    },
+                    animation: {
+                        duration: 0
+                    }
+                }
+            }
+        );
+
+
+        var drawtemperaturaExterna4 = document.getElementById('temperaturaExterna4').getContext('2d');
+        drawtemperaturaExterna4.canvas.width = 1000;
+        drawtemperaturaExterna4.canvas.height = 300;
+        var temperaturaExterna4 = new Chart(
+            drawtemperaturaExterna4,
+            {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Temperatura',
+                        type: 'line',
+                        borderColor: ['#ffd902'],
+                        backgroundColor: ['#ffe135']
+                    }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            distribution: 'series',
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }],
+                        yAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Temperatura'
+                            },
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    },
+                    animation: {
+                        duration: 0
+                    }
+                }
+            }
+        );
+        
+
+        var paginacao = {};
+        var tempo = {};
+        function obterDados(grafico, endpoint) {
+            var http = new XMLHttpRequest();
+            http.open('GET', 'http://localhost:3300/sensores/' + endpoint, false);
+            http.send(null);
+            var valores = JSON.parse(http.responseText);
+            if (paginacao[endpoint] == null) {
+                paginacao[endpoint] = 0;
+            }
+            if (tempo[endpoint] == null) {
+                tempo[endpoint] = 0;
+            }
+            // Exibir à partir do último elemento exibido anteriormente
+            var ultimaPaginacao = paginacao[endpoint];
+            paginacao[endpoint] = valores.length;
+            var valores = valores.slice(ultimaPaginacao);
+            valores.forEach((valor) => {
+                //Máximo de 60 itens exibidos no gráfico
+                if (grafico.data.labels.length == 10 && grafico.data.datasets[0].data.length == 10) {
+                    grafico.data.labels.shift();
+                    grafico.data.datasets[0].data.shift();
+                }
+
+                grafico.data.labels.push(tempo[endpoint]++);
+                grafico.data.datasets[0].data.push(parseFloat(valor));
+                grafico.update();
+            })
+        }
+
+        setInterval(() => {
+            obterDados(temperaturaInterna, 'lm35/temperaturaI');
+            obterDados(temperaturaExterna, 'lm35/temperaturaE');
+            obterDados(temperaturaInterna1, 'lm35/temperaturaI1');
+            obterDados(temperaturaExterna1, 'lm35/temperaturaE1');
+            obterDados(temperaturaInterna2, 'lm35/temperaturaI2');
+            obterDados(temperaturaExterna2, 'lm35/temperaturaE2');
+            obterDados(temperaturaInterna3, 'lm35/temperaturaI3');
+            obterDados(temperaturaExterna3, 'lm35/temperaturaE3');
+            obterDados(temperaturaInterna4, 'lm35/temperaturaI4');
+            obterDados(temperaturaExterna4, 'lm35/temperaturaE4');
+        }, 1000);
+
+    </script>
+</body>
+
+</html>

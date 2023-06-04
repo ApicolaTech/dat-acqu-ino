@@ -39,7 +39,7 @@ const serial = async (
                 // CREDENCIAIS DO BANCO LOCAL - MYSQL WORKBENCH (credenciais da julia)
                 host: '10.18.32.56',
                 user: 'ino',
-                password: 'Arduino123',
+                password: '1234',
                 database: 'apicolatech'
             }
         ).promise();
@@ -116,22 +116,34 @@ const serial = async (
 
                 // altere!
                 // Este insert irá inserir os dados na tabela "medida"
-                // -> altere nome da tabela e colunas se necessário
+               2   // -> altere nome da tabela e colunas se necessário
                 // Este insert irá inserir dados de fk_aquario id=1 (fixo no comando do insert abaixo)
                 // >> você deve ter o aquario de id 1 cadastrado.
+                console.log(temperaturaInterna1 + " " + temperaturaExterna1)
+                console.log(temperaturaInterna2 + " " + temperaturaExterna2)
                 await poolBancoDados.execute(
-                    // 'INSERT INTO medida (dht11_umidade, dht11_temperatura, luminosidade, lm35_temperatura, chave, momento, fk_aquario) VALUES (?, ?, ?, ?, ?, now(), 1)',
-                    // [dht11Umidade, dht11Temperatura, luminosidade, lm35Temperatura, chave]
-                    `INSERT INTO RegistroApiario (DataHora, Temperatura, fkSensor) VALUES (now(), ?, 1)`,
+                    `INSERT INTO RegistroApiario (fkApiario, fkLocalFazenda, fkEmpresa, DataHora, Temperatura, fkSensor) VALUES (1, 1, 1, now(), ?, 1);`,
                     [temperaturaInterna1]
                 );
 
                 await poolBancoDados.execute(
-                    `INSERT INTO RegistroApiario (DataHora, Temperatura, fkSensor) VALUES (now(), ?, 2)`,
+                    `INSERT INTO RegistroApiario (fkApiario, fkLocalFazenda, fkEmpresa, DataHora, Temperatura, fkSensor) VALUES (1, 1, 1, now(), ?, 2);`,
                     [temperaturaExterna1]
                 );
 
-                console.log("valores inseridos no banco: ", temperaturaInterna1 + ", " + temperaturaExterna1) //+ ", " + luminosidade + ", " + lm35Temperatura + ", " + chave)
+                await poolBancoDados.execute(
+                    `INSERT INTO RegistroApiario (fkApiario, fkLocalFazenda, fkEmpresa, DataHora, Temperatura, fkSensor) VALUES (2, 1, 1, now(), ?, 3);`,
+                    [temperaturaInterna2]
+                );
+
+                await poolBancoDados.execute(
+                    `INSERT INTO RegistroApiario (fkApiario, fkLocalFazenda, fkEmpresa, DataHora, Temperatura, fkSensor) VALUES (2, 1, 1, now(), ?, 4);`,
+                    [temperaturaExterna2]
+                );
+
+
+                console.log("valores inseridos no banco: ", temperaturaInterna1 + ", " + temperaturaExterna1) 
+                console.log("valores inseridos no banco: ", temperaturaInterna2 + ", " + temperaturaExterna2) 
 
             } else {
                 throw new Error('Ambiente não configurado. Verifique o arquivo "main.js" e tente novamente.');
